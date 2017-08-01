@@ -22,6 +22,10 @@ install:
   - ./scripts/install_texlive.sh
   - export PATH=$HOME/.texlive/bin/x86_64-linux:$PATH
   - pip install Pygments
+  - mkdir -p $HOME/texmf/tex/latex/
+  - cp zmdocument.cls $HOME/texmf/tex/latex/
+  - texhash
+  - rm zmddocument.cls
 
 script:
     - make test
